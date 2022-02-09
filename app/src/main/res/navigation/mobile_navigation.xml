@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_shop">
+    <fragment
+        android:id="@+id/nav_shop"
+        android:name="com.fisei.athanasiaapp.ui.ProductsFragment"
+        android:label="@string/menu_shop"
+        tools:layout="@layout/fragment_products" />
+    <fragment
+        android:id="@+id/nav_orders"
+        android:name="com.fisei.athanasiaapp.ui.MyOrdersFragment"
+        android:label="@string/menu_orders"
+        tools:layout="@layout/fragment_my_orders" />
+    <fragment
+        android:id="@+id/nav_shop_cart"
+        android:name="com.fisei.athanasiaapp.ui.ShopCartFragment"
+        android:label="@string/menu_cart"
+        tools:layout="@layout/fragment_shop_cart" />
+</navigation>

@@ -1,0 +1,56 @@
+<resources>
+    //App
+    <string name="app_name">AthanasiaApp</string>
+    <string name="name">Athanasia</string>
+    //Login
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="label_login">Log In</string>
+    <string name="label_signup">Sign Up</string>
+    <string name="label_new_user">New? Create an account here!</string>
+    <string name="label_wrong_email_password">Invalid email or password</string>
+    <string name="email_example">example@ath.com</string>
+    <string name="password_example">*********</string>
+    //Sign Up
+    <string name="label_register">Register</string>
+    <string name="label_name">Name</string>
+    <string name="label_cedula">Cédula</string>
+    <string name="name_example">José</string>
+    <string name="Dominio">@ath.com</string>
+    <string name="hint_cedula">10 digits</string>
+    <string name="fields_empty_error">One or more fields are empty</string>
+    //Products Fragment
+    <string name="product_image_description">Image that show the product</string>
+    <string name="read_error">Unable to read products data.</string>
+    <string name="connect_error">Unable to connect to AthanasiaApi.</string>
+    <string name="label_add_to_Cart">Add to cart the item</string>
+    <string name="label_actual_quantity">Actual QTY:</string>
+    <string name="label_unit_price">Unit Price:</string>
+    //ShopCart fragment
+    <string name="checkout_button_text">Checkout</string>
+    <string name="save_button_text">Save Cart</string>
+    //Drawer
+    <string name="title_activity_athanasia">AthanasiaActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Log out</string>
+    <string name="example_username">User Name</string>
+    //DrawMenu
+    <string name="menu_shop">Shop</string>
+    <string name="menu_orders">Orders</string>
+    <string name="menu_cart">Cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //OrderDetails
+    <string name="label_order_id">Order ID:</string>
+    <string name="label_order_user">Client ID:</string>
+    <string name="label_order_totalIVA">Total with IVA:</string>
+    <string name="label_order_total_no_IVA">Total:</string>
+    <string name="label_detail_name">Name: </string>
+    <string name="label_detail_quantity">Quantity:</string>
+    <string name="label_detail_unit_price">Unit Price:</string>
+
+    <string name="example_email">stalin@ath.com</string>
+    <string name="example_password">kebab</string>
+</resources>

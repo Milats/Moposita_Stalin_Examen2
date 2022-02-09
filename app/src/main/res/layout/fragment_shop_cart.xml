@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ShopCartFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/checkout_space_height">
+
+        <Button
+            android:id="@+id/btnSaveCart"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/checkout_button_height"
+            android:layout_margin="@dimen/product_info_margin"
+            android:layout_weight="1"
+            android:text="@string/save_button_text"/>
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/checkout_button_height"
+            android:layout_margin="@dimen/product_info_margin"
+            android:layout_weight="15"
+            android:text="@string/checkout_button_text" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewTotalShop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/total_text"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        android:layout_margin="@dimen/product_info_margin"/>
+
+    <ListView
+        android:id="@+id/listViewShopCartFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
