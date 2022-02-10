@@ -126,4 +126,5 @@ public class LoginActivity extends AppCompatActivity {
     private final View.OnClickListener loginButtonClicked = view -> Login();
     private final View.OnClickListener signUpButtonClicked = view -> SignUp();
     private final View.OnLongClickListener loginAdminButtonClicked = view -> LoginAdmin();
+
 }

@@ -52,7 +52,10 @@ public class SingUpActivity extends AppCompatActivity {
             if(responseTask.Success){
                 StartLoginActivity();
             } else {
-                errorTextView.setText(responseTask.Message);
+                if(!errorTextView.getText().toString().isEmpty()){
+                    String temp = errorTextView.getText().toString();
+                    errorTextView.setText(temp + "\n" + responseTask.Message);
+                }
             }
             responseTask.Success = false;
         }
@@ -71,9 +74,11 @@ public class SingUpActivity extends AppCompatActivity {
                 editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()){
             errorTextView.setText(R.string.fields_empty_error);
         } else {
-            errorTextView.setText("");
-            SignUpTask signUpTask = new SignUpTask();
-            signUpTask.execute();
+            if(SIMP_CheckIfPasswordIsValid(editTextPassword.getText().toString())){
+                errorTextView.setText("");
+                SignUpTask signUpTask = new SignUpTask();
+                signUpTask.execute();
+            }
         }
     }
     private void StartLoginActivity(){
@@ -83,4 +88,68 @@ public class SingUpActivity extends AppCompatActivity {
     }
     private final View.OnClickListener signUpButtonClicked = view -> SignUp();
 
+
+    private boolean SIMP_CheckIfPasswordIsValid(String passwd){
+        String error_message = "";
+        boolean flag = true;
+        if(!SIMP_CheckPasswLenght(passwd)){
+            flag = false;
+            error_message += "\n" + R.string.password_no_lenght;
+        }
+        if (!SIMP_CheckPasswLowerCase(passwd)){
+            flag = false;
+            error_message += "\n" + R.string.password_no_lower;
+        }
+        if(!SIMP_CheckPasswUpperCase(passwd)){
+            flag = false;
+            error_message += "\n" + R.string.password_no_upper;
+        }
+        if (!SIMP_CheckPasswSpecial(passwd)){
+            flag = false;
+            error_message += "\n" + R.string.password_no_special;
+        }
+        if(!SIMP_CheckPasswNumber(passwd)){
+            flag = false;
+            error_message += "\n" + R.string.password_no_digit;
+        }
+        errorTextView.setText(error_message);
+        return flag;
+    }
+    private boolean SIMP_CheckPasswLenght(String passwd){
+        return passwd.length() >= 6 && passwd.length() <= 10;
+    }
+    private boolean SIMP_CheckPasswUpperCase(String passwd){
+        char c;
+        for (int i = 0; i < passwd.length(); i++) {
+            c = passwd.charAt(i);
+            if (Character.isUpperCase(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean SIMP_CheckPasswLowerCase(String passwd) {
+        char c;
+        for (int i = 0; i < passwd.length(); i++) {
+            c = passwd.charAt(i);
+            if (Character.isLowerCase(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean SIMP_CheckPasswSpecial(String passwd){
+
+        return true;
+    }
+    private boolean SIMP_CheckPasswNumber(String passwd) {
+        char c;
+        for (int i = 0; i < passwd.length(); i++) {
+            c = passwd.charAt(i);
+            if (Character.isDigit(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

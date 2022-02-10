@@ -19,6 +19,14 @@
     <string name="Dominio">@ath.com</string>
     <string name="hint_cedula">10 digits</string>
     <string name="fields_empty_error">One or more fields are empty</string>
+
+    <string name="password_no_lenght">La cotraseña debe estar entre los 6 y 10 caracteres</string>
+    <string name="password_no_digit">La contraseña debe tener al menos un dígito</string>
+    <string name="password_no_upper">La contraseña debe tener al menos una letra mayúscula</string>
+    <string name="password_no_lower">La contraseña debe tener al menos una letra minúscula</string>
+    <string name="password_no_special">La contraseña debe tener al menos un carácter especial</string>
+
+
     //Products Fragment
     <string name="product_image_description">Image that show the product</string>
     <string name="read_error">Unable to read products data.</string>
@@ -39,7 +47,7 @@
     <string name="example_username">User Name</string>
     //DrawMenu
     <string name="menu_shop">Shop</string>
-    <string name="menu_orders">Orders</string>
+    <string name="menu_orders">My Orders</string>
     <string name="menu_cart">Cart</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

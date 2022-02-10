@@ -57,9 +57,9 @@ public class OrderDetailsArrayAdapter extends ArrayAdapter<OrderDetail> {
         }
         viewHolder.orderDetailNameTextView.setText(orderDetail.Name);
         viewHolder.orderDetailQuantityTextView.setText(String.format("%s", orderDetail.Quantity));
-        viewHolder.orderDetailUnitPriceTextView.setText(String.format("%s", orderDetail.UnitPrice) + " $");
+        viewHolder.orderDetailUnitPriceTextView.setText(String.format("%.2f", orderDetail.UnitPrice) + " $");
         viewHolder.orderDetailIDTextView.setText(String.format("%s", orderDetail.ID));
-        viewHolder.orderDetailSubtotalTextView.setText(String.format("%2f", orderDetail.Quantity * orderDetail.UnitPrice));
+        viewHolder.orderDetailSubtotalTextView.setText(String.format("%.2f", orderDetail.Quantity * orderDetail.UnitPrice) + " $");
         return convertView;
     }
     private class LoadImageTask extends AsyncTask<String, Void, Bitmap> {
