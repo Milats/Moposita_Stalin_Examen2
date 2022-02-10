@@ -29,6 +29,7 @@ public class ShopItemArrayAdapter extends ArrayAdapter<ShopCartItem> {
         TextView shopCartItemName;
         TextView shopCartItemUnitPrice;
         TextView shopCartItemQty;
+        TextView shopCartItemMaxQTY;
         Button shopCartItemPlusQty;
         Button shopCartItemMinusQty;
         Button shopCartDeleteItem;
@@ -51,6 +52,7 @@ public class ShopItemArrayAdapter extends ArrayAdapter<ShopCartItem> {
             viewHolder.shopCartItemMinusQty = (Button) convertView.findViewById(R.id.btnMinusQty);
             viewHolder.shopCartItemPlusQty = (Button) convertView.findViewById(R.id.btnPlusQty);
             viewHolder.shopCartDeleteItem = (Button) convertView.findViewById(R.id.btnCartQuit);
+            viewHolder.shopCartItemMaxQTY = (TextView) convertView.findViewById(R.id.shopItemMaxQTYTextView);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -64,6 +66,7 @@ public class ShopItemArrayAdapter extends ArrayAdapter<ShopCartItem> {
         viewHolder.shopCartItemName.setText(item.Name);
         viewHolder.shopCartItemUnitPrice.setText(String.format("%s", item.UnitPrice + " $"));
         viewHolder.shopCartItemQty.setText(String.format("%s", item.Quantity));
+        viewHolder.shopCartItemMaxQTY.setText(String.format("%s", item.MaxQty));
         viewHolder.shopCartDeleteItem.setOnClickListener(view -> { DeleteFromCart(item.Id); });
         viewHolder.shopCartItemPlusQty.setOnClickListener(view ->{ AddQty(item.Id, item.MaxQty);} );
         viewHolder.shopCartItemMinusQty.setOnClickListener(view ->{ ReduceQty(item.Id);} );

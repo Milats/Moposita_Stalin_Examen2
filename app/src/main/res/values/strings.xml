@@ -26,6 +26,7 @@
     <string name="label_add_to_Cart">Add to cart the item</string>
     <string name="label_actual_quantity">Actual QTY:</string>
     <string name="label_unit_price">Unit Price:</string>
+    <string name="label_max_qty">Actual Stock:</string>
     //ShopCart fragment
     <string name="checkout_button_text">Checkout</string>
     <string name="save_button_text">Save Cart</string>
@@ -50,6 +51,8 @@
     <string name="label_detail_name">Name: </string>
     <string name="label_detail_quantity">Quantity:</string>
     <string name="label_detail_unit_price">Unit Price:</string>
+    <string name="label_detail_subtotal">Subtotal:</string>
+    <string name="label_detail_id">ID:</string>
 
     <string name="example_email">stalin@ath.com</string>
     <string name="example_password">kebab</string>

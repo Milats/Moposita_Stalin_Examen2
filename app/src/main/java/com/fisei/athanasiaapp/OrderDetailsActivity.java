@@ -79,7 +79,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         }
     }
     private OrderDetail ConvertProductToOrderDetail(Product product, int qty){
-        return new OrderDetail(product.name, qty, product.unitPrice, product.imageURL);
+        return new OrderDetail(product.id, product.name, qty, product.unitPrice, product.imageURL);
     }
     private void InitializeViewComponents(){
         textViewOrderID = (TextView) findViewById(R.id.textViewOrderInfoID);

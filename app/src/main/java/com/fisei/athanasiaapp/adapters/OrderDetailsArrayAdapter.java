@@ -14,6 +14,8 @@ import com.fisei.athanasiaapp.objects.OrderDetail;
 import com.fisei.athanasiaapp.R;
 import com.fisei.athanasiaapp.services.ImageService;
 
+import org.w3c.dom.Text;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +25,8 @@ public class OrderDetailsArrayAdapter extends ArrayAdapter<OrderDetail> {
         TextView orderDetailNameTextView;
         TextView orderDetailQuantityTextView;
         TextView orderDetailUnitPriceTextView;
+        TextView orderDetailSubtotalTextView;
+        TextView orderDetailIDTextView;
         ImageView orderDetailImageView;
     }
     private final Map<String, Bitmap> bitmaps = new HashMap<>();
@@ -40,6 +44,8 @@ public class OrderDetailsArrayAdapter extends ArrayAdapter<OrderDetail> {
             viewHolder.orderDetailQuantityTextView = (TextView) convertView.findViewById(R.id.textViewOrderDetailQuantity);
             viewHolder.orderDetailUnitPriceTextView = (TextView) convertView.findViewById(R.id.textViewOrderDetailUnitPrice);
             viewHolder.orderDetailImageView = (ImageView) convertView.findViewById(R.id.imageViewOrderDetail);
+            viewHolder.orderDetailSubtotalTextView = (TextView) convertView.findViewById(R.id.textViewOrderDetailSubtotal);
+            viewHolder.orderDetailIDTextView = (TextView) convertView.findViewById(R.id.textViewOrderDetailID);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -52,6 +58,8 @@ public class OrderDetailsArrayAdapter extends ArrayAdapter<OrderDetail> {
         viewHolder.orderDetailNameTextView.setText(orderDetail.Name);
         viewHolder.orderDetailQuantityTextView.setText(String.format("%s", orderDetail.Quantity));
         viewHolder.orderDetailUnitPriceTextView.setText(String.format("%s", orderDetail.UnitPrice) + " $");
+        viewHolder.orderDetailIDTextView.setText(String.format("%s", orderDetail.ID));
+        viewHolder.orderDetailSubtotalTextView.setText(String.format("%2f", orderDetail.Quantity * orderDetail.UnitPrice));
         return convertView;
     }
     private class LoadImageTask extends AsyncTask<String, Void, Bitmap> {
