@@ -125,17 +125,17 @@
 
     <TextView
         android:id="@+id/textViewSignUpFail1"
-        android:layout_width="357dp"
-        android:layout_height="47dp"
+        android:layout_width="343dp"
+        android:layout_height="109dp"
         android:text=""
         android:textColor="#EF0505"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77" />
+        app:layout_constraintVertical_bias="0.807" />
 
     <Button
         android:id="@+id/btnSignUp"

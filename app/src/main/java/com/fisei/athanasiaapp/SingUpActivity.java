@@ -3,6 +3,7 @@ package com.fisei.athanasiaapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,8 @@ import com.fisei.athanasiaapp.services.UserClientService;
 import org.json.JSONObject;
 
 import java.net.URL;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SingUpActivity extends AppCompatActivity {
 
@@ -52,9 +55,8 @@ public class SingUpActivity extends AppCompatActivity {
             if(responseTask.Success){
                 StartLoginActivity();
             } else {
-                if(!errorTextView.getText().toString().isEmpty()){
-                    String temp = errorTextView.getText().toString();
-                    errorTextView.setText(temp + "\n" + responseTask.Message);
+                if(!errorTextView.getText().toString().isEmpty() || errorTextView.getText().toString().equals("")){
+                    errorTextView.setText(responseTask.Message);
                 }
             }
             responseTask.Success = false;
@@ -92,25 +94,26 @@ public class SingUpActivity extends AppCompatActivity {
     private boolean SIMP_CheckIfPasswordIsValid(String passwd){
         String error_message = "";
         boolean flag = true;
+        Resources res = getResources();
         if(!SIMP_CheckPasswLenght(passwd)){
             flag = false;
-            error_message += "\n" + R.string.password_no_lenght;
+            error_message += "\n" + res.getString(R.string.password_no_lenght);
         }
         if (!SIMP_CheckPasswLowerCase(passwd)){
             flag = false;
-            error_message += "\n" + R.string.password_no_lower;
+            error_message += "\n" + res.getString(R.string.password_no_lower);
         }
         if(!SIMP_CheckPasswUpperCase(passwd)){
             flag = false;
-            error_message += "\n" + R.string.password_no_upper;
+            error_message += "\n" + res.getString(R.string.password_no_upper);
         }
         if (!SIMP_CheckPasswSpecial(passwd)){
             flag = false;
-            error_message += "\n" + R.string.password_no_special;
+            error_message += "\n" + res.getString(R.string.password_no_special);
         }
         if(!SIMP_CheckPasswNumber(passwd)){
             flag = false;
-            error_message += "\n" + R.string.password_no_digit;
+            error_message += "\n" + res.getString(R.string.password_no_digit);
         }
         errorTextView.setText(error_message);
         return flag;
@@ -139,8 +142,10 @@ public class SingUpActivity extends AppCompatActivity {
         return false;
     }
     private boolean SIMP_CheckPasswSpecial(String passwd){
+        Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(passwd);
 
-        return true;
+        return m.find();
     }
     private boolean SIMP_CheckPasswNumber(String passwd) {
         char c;

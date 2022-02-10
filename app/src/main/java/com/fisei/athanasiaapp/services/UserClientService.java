@@ -148,6 +148,7 @@ public class UserClientService {
                         responseAth.Message += "\n" + Utils.CleanString(errors.getString("cedula"));
                     } else {
                         responseAth.Message += Utils.CleanString(errors.getString("cedula"));
+                        int a = 0;
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
