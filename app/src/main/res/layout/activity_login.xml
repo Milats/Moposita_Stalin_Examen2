@@ -41,10 +41,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
-        app:layout_constraintVertical_bias="0.147" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <TextView
         android:id="@+id/textView3"
@@ -74,17 +74,17 @@
 
     <TextView
         android:id="@+id/textViewLoginFailed"
-        android:layout_width="356dp"
-        android:layout_height="27dp"
+        android:layout_width="332dp"
+        android:layout_height="96dp"
         android:text=""
         android:textColor="#EF0505"
-        android:textSize="20sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintVertical_bias="0.965" />
 
     <EditText
         android:id="@+id/editTextPassword"
