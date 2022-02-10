@@ -20,6 +20,8 @@
     <string name="hint_cedula">10 digits</string>
     <string name="fields_empty_error">One or more fields are empty</string>
 
+    <string name="cedula_no_length">La cédula es demasiado corta</string>
+    <string name="cedula_no_digits">La cédula contiene caracteres inválidos</string>
     <string name="password_no_lenght">La cotraseña debe estar entre los 6 y 10 caracteres</string>
     <string name="password_no_digit">La contraseña debe tener al menos un dígito</string>
     <string name="password_no_upper">La contraseña debe tener al menos una letra mayúscula</string>

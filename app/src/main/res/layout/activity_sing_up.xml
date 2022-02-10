@@ -83,20 +83,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.455" />
 
-    <EditText
-        android:id="@+id/editTextSignUpCedula"
-        android:layout_width="334dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/hint_cedula"
-        android:inputType="numberDecimal"
-        android:maxLength="10"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
 
     <TextView
         android:id="@+id/textView6"
@@ -161,5 +147,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239" />
+
+    <EditText
+        android:id="@+id/editTextSignUpCedula"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:maxLength="10"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.525" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

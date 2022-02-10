@@ -76,7 +76,8 @@ public class SingUpActivity extends AppCompatActivity {
                 editTextCedula.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()){
             errorTextView.setText(R.string.fields_empty_error);
         } else {
-            if(SIMP_CheckIfPasswordIsValid(editTextPassword.getText().toString())){
+            if(SIMP_CheckIfPasswordAndCedulaAreValid(editTextPassword.getText().toString(),
+                    editTextCedula.getText().toString())){
                 errorTextView.setText("");
                 SignUpTask signUpTask = new SignUpTask();
                 signUpTask.execute();
@@ -90,11 +91,18 @@ public class SingUpActivity extends AppCompatActivity {
     }
     private final View.OnClickListener signUpButtonClicked = view -> SignUp();
 
-
-    private boolean SIMP_CheckIfPasswordIsValid(String passwd){
+    private boolean SIMP_CheckIfPasswordAndCedulaAreValid(String passwd, String cedula){
         String error_message = "";
         boolean flag = true;
         Resources res = getResources();
+        if(!SIMP_CheckCedulaLenght(cedula)){
+            flag = false;
+            error_message += "\n" + res.getString(R.string.cedula_no_length);
+        }
+        if(!SIMP_CheckCedulaOnlyDigits(cedula)){
+            flag = false;
+            error_message += "\n" + res.getString(R.string.cedula_no_digits);
+        }
         if(!SIMP_CheckPasswLenght(passwd)){
             flag = false;
             error_message += "\n" + res.getString(R.string.password_no_lenght);
@@ -156,5 +164,18 @@ public class SingUpActivity extends AppCompatActivity {
             }
         }
         return false;
+    }
+    private boolean SIMP_CheckCedulaLenght(String cedula){
+        return cedula.length() == 10;
+    }
+    private boolean SIMP_CheckCedulaOnlyDigits(String cedula){
+        char c;
+        for (int i = 0; i < cedula.length(); i++) {
+            c = cedula.charAt(i);
+            if (!Character.isDigit(c)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
